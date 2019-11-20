@@ -1,7 +1,6 @@
 ---
 title: 'Publicly complex: N. Ibn Najam, J. Gendron & J-F Quiñonez'
 date: 2019-11-20 13:30:00 -05:00
-permalink: "/events/path"
 tags:
 - Publicly Complex
 - Poetry
@@ -27,5 +26,6 @@ Description: "Publicly Complex is pleased to present a reading with Noor Ibn Naj
   trying their best not to talk too much about Rock and Roll or Fruit Bats, but Promises
   Nothing."
 Image: "/uploads/74607624_10214945173199155_1677501001889742848_o.jpg"
+layout: event
 ---
 
