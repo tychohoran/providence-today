@@ -1,7 +1,7 @@
 ---
 title: 'Publicly complex: N. Ibn Najam, J. Gendron & J-F Quiñonez'
 date: 2019-11-20 13:30:00 -05:00
-permalink: "/events"
+permalink: "/events/path"
 tags:
 - Publicly Complex
 - Poetry
