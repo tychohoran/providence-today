@@ -5,7 +5,7 @@ collections:
   events:
     title: Events
     output: true
-    permalink: "/events['Starts At']/:path"
+    permalink: "/:categories/:path"
     base: Starts At
   posts:
     title: Posts
