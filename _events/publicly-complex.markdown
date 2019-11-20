@@ -2,7 +2,7 @@
 title: 'Publicly complex: N. Ibn Najam, J. Gendron & J-F Quiñonez'
 date: 2018-12-07 19:00:00 -05:00
 categories:
-- December 19
+- '2019'
 tags:
 - Publicly Complex
 - Poetry
