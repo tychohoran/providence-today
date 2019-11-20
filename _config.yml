@@ -5,6 +5,7 @@ collections:
   events:
     title: Events
     output: true
+    permalink: "/:collection/:year/:month/:day/:path"
   posts:
     title: Posts
     output: true
