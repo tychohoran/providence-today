@@ -1,6 +1,6 @@
 ---
 title: 'Publicly complex: N. Ibn Najam, J. Gendron & J-F Quiñonez'
-date: 2018-12-07 19:00:00 -05:00
+date: 2018-11-19 19:00:00 -05:00
 categories:
 - '2019'
 - december
