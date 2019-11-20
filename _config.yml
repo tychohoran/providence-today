@@ -1,0 +1,38 @@
+---
+title: pvd.today
+timezone: America/New_York
+collections:
+  events:
+    title: Events
+    output: true
+    permalink: "/:categories/:path"
+    base: Starts At
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+    icon image: 
+- scope:
+    path: ''
+    type: events
+  values:
+    Starts At: 
+    Ends At: 
+    Short Location: 
+    Full Address: 
+    Description: 
+    Image: 
+email: pvdtoday@gmail.com
+description: Providence Today (pvd.today) is a list of events in and around Providence,
+  RI.
+baseurl: 
+url: http://pvd.today
+markdown: kramdown

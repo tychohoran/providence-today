@@ -1,0 +1,20 @@
+<section class="event-list">
+{% assign today = "now" | date: "%Y-%m-%d %H:%M" %}
+{% for event in site.events | sort: "Starts At" %}
+	{% assign event_date =  event['Starts At'] | date: "%Y-%m-%d %H:%M" %}
+	{% if event.title %}
+		<article class="event">
+			<div class="wrapper">
+				<a class="event-date">
+					{{event['Starts At'] | date: "%a %b %e"}}
+				</a>
+				<a class="event-time">
+					{{event['Starts At'] | date: "%l:%M"}} - {{event['Ends At'] | date: "%l:%M"}}<span class="event-pmam">{{event['Ends At'] | date: "%p"}}</span>
+				</a>
+				<a class="event-name">
+				</a>
+			</div>
+		</article>
+	{% endif %}
+{% endfor %}
+</section>
