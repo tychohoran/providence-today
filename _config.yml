@@ -5,8 +5,8 @@ collections:
   events:
     title: Events
     output: true
-    base: "Starts At"
     permalink: "/:collection/:year/:month/:day/:path"
+    base: Starts At
   posts:
     title: Posts
     output: true
