@@ -41,7 +41,7 @@
 
 .event {
     padding: $spacing-unit 0;
-    font-family: "Roboto Condensed", Roboto Condensed, Roboto, sans-serif;
+    font-family: $header-font-family;
     text-transform: uppercase;
     font-size: $header-font-size;
     letter-spacing: -1px;
@@ -77,7 +77,7 @@
     .event-name{
         letter-spacing: 0;
         text-transform: none;
-        font-family: initial;
+        font-family: $base-font-family;
         font-size: $base-font-size;
         font-style: italic;
         color: $text-color;
