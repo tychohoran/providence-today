@@ -5,13 +5,17 @@
 	{% if event.title %}
 		<article class="event">
 			<div class="wrapper">
-				<a class="event-date">
+				<a class="event-date" href="{{event.url | prepend: site.baseurl}}">
 					{{event['Starts At'] | date: "%a %b %e"}}
 				</a>
-				<a class="event-time">
-					{{event['Starts At'] | date: "%l:%M"}} - {{event['Ends At'] | date: "%l:%M"}}<span class="event-pmam">{{event['Ends At'] | date: "%p"}}</span>
+				<a class="event-time" href="{{event.url | prepend: site.baseurl}}">
+					{% assign start = event['Starts At'] | date: "%l:%M-" %}
+					{% assign end = event['Ends At'] | date: "%l:%M" %}
+					{% assign range = start | append: end%}
+					{{range | remove: " "}}<span class="event-ampm">{{event['Ends At'] | date: "%p"}}</span>
 				</a>
-				<a class="event-name">
+				<a class="event-name" href="{{event.url | prepend: site.baseurl}}">
+					{{event.title | truncate: 100 }}{% if event['Short Location'] %} <span class="event-location">@ {{event['Short Location']}}</span>{% endif %}
 				</a>
 			</div>
 		</article>

@@ -6,24 +6,26 @@
 
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-family: "Happy Times", Times, serif;
+$base-font-size:   18px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
+$header-font-size: 2*$base-font-size;
 
-$spacing-unit:     30px;
+$spacing-unit:     $base-font-size;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
+$text-color:       #000;
+$background-color: #fff;
 $brand-color:      #2a7ae2;
+$accent-color: 	   #ff6633;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    600px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -43,7 +45,42 @@ $on-laptop:        800px;
     }
 }
 
+// Use @font-face
 
+@mixin font-face( $font-name, $font-path, // path + file name. Ex : path/to/font/filename
+$font-weight: 400, $font-style: normal, $support-required: 'modern') {
+  @font-face {
+    font-family: $font-name;
+    font-style : $font-style;
+    font-weight: $font-weight;
+    @if $support-required=='oldie' {
+      src: url('#{$font-path}.eot');
+      src: url('#{$font-path}.eot?#iefix') format('embedded-opentype'),
+      url('#{$font-path}.woff2') format('woff2'),
+      url('#{$font-path}.woff') format('woff'),
+      url('#{$font-path}.ttf') format('truetype');
+    }
+    @if $support-required=='recent' {
+      src: url('#{$font-path}.woff2') format('woff2'),
+      url('#{$font-path}.woff') format('woff'),
+      url('#{$font-path}.ttf') format('truetype');
+    }
+    @if $support-required=='modern' {
+      src: url('#{$font-path}.woff2') format('woff2'),
+      url('#{$font-path}.woff') format('woff');
+    }
+  }
+  @if $support-required !='oldie' and $support-required !='recent' and $support-required !='modern' {
+    @error 'Invalid support-required value. Must be "oldie"==>IE8 and above/ Android native browser 4+/ Safari 4.3 OR "recent"==>IE9+/ Android native browser 4.0+/ Safari 4.3+ OR "modern"==>IE9+/ Android native browser 4.4+/ Safari 5.1+';
+  }
+}
+
+//Define fonts
+@include font-face("BlackHPLHS","../fonts/BlackHPLHS");
+@include font-face("Roboto Condensed","../fonts/RobotoCondensed-Regular", 400, normal);
+@include font-face("Roboto Condensed","../fonts/RobotoCondensed-Bold", 700, normal);
+@include font-face("Happy Times","../fonts/happy-times-at-the-ikob", 400, normal);
+@include font-face("Happy Times","../fonts/happy-times-at-the-ikobitalic", 400, italic);
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
