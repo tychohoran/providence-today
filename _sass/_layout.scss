@@ -36,16 +36,38 @@
 }
 
 /**
+ * Posts
+ */
+
+.post {
+    padding: $spacing-unit 0;
+    .post-header{
+        @extend  %flex-box;
+
+        img {
+            width:100%;
+            height: auto;
+        }
+    }
+    .post-title {
+        font-family: $header-font-family;
+        font-size: $header-font-size;
+    }
+
+    .post-content {
+        font-size: $base-font-size;
+    }
+    .post-location {
+        color: $accent-color;
+    }
+}
+
+/**
  * Events
  */
 
 .event {
     padding: $spacing-unit 0;
-    font-family: $header-font-family;
-    text-transform: uppercase;
-    font-size: $header-font-size;
-    letter-spacing: -1px;
-    line-height: 1.2;
     border-bottom: solid 2px $accent-color;
 
     &:hover {
@@ -59,20 +81,31 @@
     .wrapper {
         @extend  %flex-box;
     }
-    .event-time {
+}
+.event-time, .event-date {
         -ms-flex: 1;
         -moz-flex: 1;
         -webkit-flex: 1;
         flex: 1;
-        text-align: right;
-        color: invert($accent-color);
-        .event-ampm {
+        font-family: $header-font-family;
+        text-transform: uppercase;
+        font-size: $header-font-size;
+        line-height: 1.2;
+}
+
+.event-date{
+    color: $accent-color;
+}
+.event-time{
+    color: invert($accent-color);
+    text-align: right;
+    .event-ampm {
             position: relative;
             font-weight: 700;
             font-size: $header-font-size/2;
             top:-13px;
-        }
     }
+}
 
     .event-name{
         letter-spacing: 0;
@@ -89,4 +122,3 @@
             color: $accent-color;
         }
     }
-}

@@ -2,15 +2,25 @@
 layout: default
 ---
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
+<article class="post">
+	<div class="wrapper">
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  	{% if page['Image'] %}
+  	<img src="{{page['Image']}}" alt="{{page.title}}">
+  	{% endif %}
+  	<a class="event-date" href="{{page.url | prepend: site.baseurl}}">
+					<span class="event-weekday">{{page['Starts At'] | date: "%A"}}</span><span class="event-day">{{page['Starts At'] | date: "%b %e"}}</span>
+				</a>
+				<a class="event-time" href="{{event.url | prepend: site.baseurl}}">
+					{% assign start = page['Starts At'] | date: "%l:%M-" %}
+					{% assign end = page['Ends At'] | date: "%l:%M" %}
+					{% assign range = start | append: end%}
+					{{range | remove: " "}}<span class="event-ampm">{{page['Ends At'] | date: "%p"}}</span>
+				</a>
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}<br><span class="post-location">{% if page['Short Location'] %}@ {{page['Short Location']}}{% endif %}</span></h1>
   </header>
-
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
-
+</div>
 </article>

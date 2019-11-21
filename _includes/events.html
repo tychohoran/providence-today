@@ -6,7 +6,7 @@
 		<article class="event">
 			<div class="wrapper">
 				<a class="event-date" href="{{event.url | prepend: site.baseurl}}">
-					{{event['Starts At'] | date: "%a %b %e"}}
+					<span class="event-weekday">{{event['Starts At'] | date: "%A"}}</span><span class="event-day">{{event['Starts At'] | date: "%b %e"}}</span>
 				</a>
 				<a class="event-time" href="{{event.url | prepend: site.baseurl}}">
 					{% assign start = event['Starts At'] | date: "%l:%M-" %}
